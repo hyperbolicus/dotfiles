@@ -1,8 +1,8 @@
 syntax on
-filetype plugin indent on
 
 " Setting basic style
 set nocompatible
+set number
 set relativenumber
 set showmode
 set smartcase
@@ -14,3 +14,20 @@ set shiftwidth=2
 set softtabstop=2
 set background=dark
 set laststatus=0
+
+" Setup Vundle
+" ------------
+filetype off
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin("~/.config/nvim/bundle")
+
+Plugin 'VundleVim/Vundle.vim'
+
+
+call vundle#end()
+
+" End Setup Plugins
+" -----------------
+
+
+filetype plugin indent on
