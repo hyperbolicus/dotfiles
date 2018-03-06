@@ -23,6 +23,10 @@ call vundle#begin("~/.config/nvim/bundle")
 
 Plugin 'VundleVim/Vundle.vim'
 
+" Plugins
+
+Plugin 'scrooloose/nerdtree'
+
 
 call vundle#end()
 
