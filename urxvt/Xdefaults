@@ -4,8 +4,10 @@ URxvt.saveLines: 10000
 URxvt.scrollBar: false
 URxvt.secondaryScroll: true
 
+!FONTS
 
-
+!xterm*faceName: xft:DejaVuSansMonoForPowerline:pixelsize=14:antialias=true
+URxvt*font:xft:DejaVuSansMono Nerd Font Mono:pixelsize=12
 
 !baskerville - lost woods
 *background:  #000000
