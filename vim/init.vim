@@ -25,8 +25,9 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 
-Plugin 'scrooloose/nerdtree'
-
+Plugin 'scrooloose/nerdtree' " File tab
+Plugin 'vim-syntastic/syntastic' " Language Description
+Plugin 'majutsushi/tagbar' " For tags
 
 call vundle#end()
 
