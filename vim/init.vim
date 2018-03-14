@@ -28,6 +28,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree' " File tab
 Plugin 'vim-syntastic/syntastic' " Language Description
 Plugin 'majutsushi/tagbar' " For tags
+Plugin 'Shougo/denite.nvim' " Like Helm for Vim
+Plugin 'vim-airline/vim-airline' " Status Bar
+Plugin 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 
@@ -36,3 +39,4 @@ call vundle#end()
 
 
 filetype plugin indent on
+let g:airline_theme='simple'
