@@ -32,6 +32,8 @@ Plugin 'Shougo/denite.nvim' " Like Helm for Vim
 Plugin 'vim-airline/vim-airline' " Status Bar
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'martinda/Jenkinsfile-vim-syntax' " Jenkinfile Plugin
+
 call vundle#end()
 
 " End Setup Plugins
@@ -40,3 +42,5 @@ call vundle#end()
 
 filetype plugin indent on
 let g:airline_theme='simple'
+
+
