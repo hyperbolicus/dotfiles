@@ -14,6 +14,7 @@ set shiftwidth=2
 set softtabstop=2
 set background=dark
 set laststatus=0
+set ignorecase
 
 " Setup Vundle
 " ------------
