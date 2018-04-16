@@ -44,4 +44,8 @@ call vundle#end()
 filetype plugin indent on
 let g:airline_theme='simple'
 
+" Key Bindings
+" ------------
 
+nmap <F12> :NERDTreeToggle<Enter>
+nmap <F11> :TagbarToggle<Enter>
