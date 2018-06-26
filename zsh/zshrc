@@ -69,6 +69,12 @@ if type nvim > /dev/null; then
 fi
 # User configuration
 
+## Configuration of Powerlevel9K
+
+# POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs)
+
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
