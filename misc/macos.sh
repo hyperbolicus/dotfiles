@@ -11,3 +11,4 @@ brew install htop
 brew install python3
 brew install nvim
 brew install ctags
+brew install ag
