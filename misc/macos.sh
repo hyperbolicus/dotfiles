@@ -12,3 +12,5 @@ brew install python3
 brew install nvim
 brew install ctags
 brew install ag
+brew install timewarrior
+brew install task
