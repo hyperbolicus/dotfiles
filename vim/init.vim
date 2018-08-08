@@ -34,6 +34,7 @@ Plugin 'vim-airline/vim-airline' " Status Bar
 Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'martinda/Jenkinsfile-vim-syntax' " Jenkinfile Plugin
+Plugin 'hashivim/vim-terraform' " Terraform Plugin
 
 call vundle#end()
 
