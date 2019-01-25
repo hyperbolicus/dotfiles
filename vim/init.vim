@@ -36,11 +36,23 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'martinda/Jenkinsfile-vim-syntax' " Jenkinfile Plugin
 Plugin 'hashivim/vim-terraform' " Terraform Plugin
 
+Plugin 'SirVer/ultisnips' " Snippet Engine
+Plugin 'honza/vim-snippets' " Basic Snippets
+
 call vundle#end()
 
 " End Setup Plugins
 " -----------------
 
+" Setting Up Ultisnips
+" --------------------
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 
 filetype plugin indent on
 let g:airline_theme='simple'
