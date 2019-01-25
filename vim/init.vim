@@ -37,7 +37,8 @@ Plugin 'martinda/Jenkinsfile-vim-syntax' " Jenkinfile Plugin
 Plugin 'hashivim/vim-terraform' " Terraform Plugin
 
 Plugin 'SirVer/ultisnips' " Snippet Engine
-Plugin 'honza/vim-snippets' " Basic Snippets
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'honza/vim-snippets' " Basic Snippet
 
 call vundle#end()
 
@@ -53,9 +54,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:deoplete#enable_at_startup = 1
 
 filetype plugin indent on
 let g:airline_theme='simple'
+
 
 " Key Bindings
 " ------------
