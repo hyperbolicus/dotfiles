@@ -40,6 +40,8 @@ Plugin 'SirVer/ultisnips' " Snippet Engine
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'honza/vim-snippets' " Basic Snippet
 
+Plugin 'tpope/vim-fugitive' " Git Wrapper
+
 call vundle#end()
 
 " End Setup Plugins

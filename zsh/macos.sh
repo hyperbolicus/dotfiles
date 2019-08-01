@@ -12,8 +12,8 @@ else
   echo ".oh-my-zsh found. Does not install"
 fi
 
-if [ ! -d "~/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
-  git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel9k" ]; then
+  git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
 fi
 
 ## Moving zshrc

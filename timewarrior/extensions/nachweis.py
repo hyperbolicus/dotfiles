@@ -44,4 +44,7 @@ for i in parser.get_intervals():
 print("Report from {} to {}".format(reportStart,reportEnd))
 
 for key,value in report.data.items():
-    print("{}:{}".format(key,value))
+    print("{}: \n------------\n".format(key))
+    for i in value:
+        print("\t{} : {}".format(i[3],";\n\t\t".join(i[4])))
+
