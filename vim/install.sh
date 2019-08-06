@@ -12,3 +12,4 @@ if [ ! -d ~/.config/nvim/bundle ]; then
 fi
 
 nvim +PluginInstall +qall
+cp ctags ~/.ctags
