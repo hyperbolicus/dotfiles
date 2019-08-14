@@ -1,0 +1,99 @@
+#+STARTUP: showall
+#+TITLE: Configuration File of Emacs
+
+
+* Configuration of Emacs
+
+** Init File
+
+This file installs org-mode and evals the code-snippets in this document. Also it defines the function for installing Packages.
+
+** Setup for MacOS
+
+For MacOS the modifier-keys have to be changed.
+
+
+#+BEGIN_SRC emacs-lisp 
+(when (eq system-type 'darwin) ;; mac specific settings
+  (setq mac-command-modifier 'meta)
+  (setq mac-right-command-modifier 'meta)
+  (setq mac-option-modifier nil)
+  (setq mac-right-option-modifier nil)
+  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+  )
+#+END_SRC
+
+** Completion Browsing with HELM
+
+Install package and replace M-x
+#+BEGIN_SRC emacs-lisp
+(package-install-if-needed 'helm)
+(global-set-key (kbd "M-x") #'helm-M-x)
+(global-set-key (kbd "C-x r b") #'helm-filtered-bookmarks)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(helm-mode 1) ;; Activate Helm-Mode
+#+END_SRC
+   
+
+* Coding Modification
+
+** Snippets
+
+Using Yasnippet for Code-Completion.
+
+#+BEGIN_SRC emacs-lisp
+  (unless (package-installed-p 'yasnippet)
+    (package-refresh-contents)
+    (package-install 'yasnippet))
+
+(yas-global-mode 1)
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/snippets"))
+#+END_SRC
+
+**** elisp Snippets
+     
+* Version Control
+
+** Magit
+
+The Git Frontend Magit is installed and used.
+
+#+BEGIN_SRC emacs-lisp
+(package-install-if-needed 'magit)
+#+END_SRC
+
+
+* Visual Settings
+
+
+** Setting the Colors for Emacs
+
+#+BEGIN_SRC emacs-lisp
+(add-to-list 'default-frame-alist '(foreground-color . "#4EFF6C"))
+(add-to-list 'default-frame-alist '(background-color . "#000000"))
+#+END_SRC
+
+** Inhibit startup message
+
+#+BEGIN_SRC emacs-lisp 
+(setq inhibit-startup-message t)
+#+END_SRC
+
+** Remove Scrollbar
+
+#+BEGIN_SRC emacs-lisp
+(scroll-bar-mode -1)
+#+END_SRC
+
+
+* Others
+
+** Deactivate alarm sound
+
+#+BEGIN_SRC emacs-lisp 
+(setq visible-bell t)
+#+END_SRC
+
+

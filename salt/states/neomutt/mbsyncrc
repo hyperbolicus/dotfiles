@@ -1,0 +1,29 @@
+ {% for i in pillar.get('mbsync') %}
+ IMAPAccount {{ i['name'] }}
+ Host {{ i['host'] }}
+ Port 143
+ User {{ i['user'] }}
+ PassCmd "pass {{ i['name'] }}"
+ SSLType starttls
+ SSLVersions TLSv1.2
+ SystemCertificates yes
+
+
+ IMAPStore {{ i['name'] }}-remote
+ Account {{ i['name'] }}
+
+ MaildirStore {{ i['name'] }}-local
+ Subfolders Verbatim
+ Path ~/.mail/{{ i['name'] }}/
+ Inbox ~/.mail/{{ i['name'] }}/Inbox
+
+ Channel {{ i['name'] }}
+ Master :{{ i['name'] }}-remote:
+ Slave :{{ i['name'] }}-local:
+ Patterns *
+ # Automatically create missing mailboxes, both locally and on the server
+ Create Both
+ # Save the synchronization state files in the relevant directory
+ SyncState *
+ 
+ {% endfor %}

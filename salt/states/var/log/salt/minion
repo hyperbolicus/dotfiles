@@ -1,0 +1,6 @@
+2019-08-11 15:02:37,516 [py.warnings      :110 ][WARNING ][23516] /usr/local/Cellar/salt/2019.2.0_1/libexec/lib/python3.7/site-packages/salt/loader.py:772: DeprecationWarning: dist() and linux_distribution() functions are deprecated in Python 3.5
+  ret = funcs[key]()
+
+2019-08-11 15:02:38,775 [py.warnings      :110 ][WARNING ][23516] /usr/local/Cellar/salt/2019.2.0_1/libexec/lib/python3.7/site-packages/salt/utils/path.py:265: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated, and in 3.8 it will stop working
+  if not isinstance(exes, collections.Iterable):
+
