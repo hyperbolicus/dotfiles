@@ -38,4 +38,25 @@ creating_mbsync:
     - group: {{ group }}
     - mode: 400
 
+creating_neomuttrc:
+  file.managed:
+    - name: ~/.config/neomutt/neomuttrc
+    - template: jinja
+    - source: salt://neomutt/neomuttrc
+    - user: {{ user }}
+    - group: {{ group }}
+    - mode: 400
+{% for i in pillar.get('mbsync') %}
+creating_{{ i['name'] }}:
+  file.managed:
+    - name: ~/.config/neomutt/{{ i['name'] }}
+    - template: jinja
+    - source: salt://neomutt/mailacc
+    - user: {{ user }}
+    - group: {{ group }}
+    - mode: 400
+    - context:
+        mbsync: [{{ i }}]
+{% endfor %}
+
 

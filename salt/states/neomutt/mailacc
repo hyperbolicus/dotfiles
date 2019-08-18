@@ -1,0 +1,7 @@
+unmailboxes *
+set mbox_type=maildir
+set folder="~/.mail/{{ mbsync[0]['name'] }}"
+set spoolfile="~/.mail/{{ mbsync[0]['name'] }}/INBOX"
+
+mailboxes `find ~/.mail/{{ mbsync[0]['name'] }} -name "cur" | awk '{ split($0,a,"/"); print a[length(a)-1] }' | xargs -n 1 -I{} find ~/.mail/{{ mbsync[0]['name'] }} -name "{}" | tr '\n' ' '`
+

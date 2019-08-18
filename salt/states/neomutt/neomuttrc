@@ -1,0 +1,34 @@
+{% set user = pillar.get('realName') %}
+{% set primary = pillar.get('mbsync')[0]['from'] %}
+set realname = {{ user | quote }}
+
+# Visual configuration
+
+
+set sidebar_visible
+set mail_check_stats
+set sidebar_format="%B%* %?N?(%N)?"
+set sidebar_short_path
+# Shorten mailbox names
+set sidebar_delim_chars="/"
+# Delete everything up to the last / character
+set sidebar_folder_indent
+# Indent folders whose names we've shortened
+set sidebar_indent_string=" -"
+# Indent with two spaces
+
+## Sidebar color scheme
+
+color sidebar_new   yellow   default
+
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html 
+
+set text_flowed=yes
+
+# Maildirs
+{% for i in pillar.get('mbsync') %}
+source ~/.config/neomutt/{{ i['name'] }}
+folder-hook ~/.mail/{{i['name']}} 'source ~/.config/neomutt/{{ i['name'] }}'
+{% endfor %}
+
