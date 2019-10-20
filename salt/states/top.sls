@@ -1,4 +1,4 @@
 base:
  '*':
    - misc
-   - neomutt
+   - i3

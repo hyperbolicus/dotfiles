@@ -13,7 +13,15 @@ xorg:
   pkg.installed:
     - pkgs:
       - xorg
+      - xorg-server
+      - xorg-apps
+      - xorg-xinit
       - xorg-fonts-misc
+
+setting_x3_config:
+  file.managed:
+    - source: salt://i3/xinitrc
+    - name: /etc/X11/xinit/xinitrc
 
 {% if grains['os'] == 'Arch' %}
 install_neo:

@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "archlinux/archlinux"
+
+  config.vm.synced_folder "../salt/states", "/srv/salt"
+
+  config.vm.provider "virtualbox" do |vb|
+    #   # Display the VirtualBox GUI when booting the machine
+    vb.gui = true
+
+    #   # Customize the amount of memory on the VM:
+    vb.memory = "1024"
+  end
+
+  # Initialize keyring
+  
+  config.vm.provision :shell do |shell|
+    shell.inline = <<-SCRIPT
+    sleep 10 # Avoiding GPG problems
+    pacman-key --init
+    curl -s "https://www.archlinux.org/mirrorlist/?country=FR&country=DE&protocol=https&use_mirror_status=on" | sed -e 's/^#Server/Server/' -e '/^#/d' > /etc/pacman.d/mirrorlist
+    SCRIPT
+  end
+  # Provisioning via Salt
+  config.vm.provision :salt do |salt|
+
+      salt.masterless = true
+      salt.run_highstate = true
+
+    end
+end
