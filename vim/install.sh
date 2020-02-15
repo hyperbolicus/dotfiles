@@ -13,3 +13,8 @@ fi
 
 nvim +PluginInstall +qall
 cp ctags ~/.ctags
+
+cd ~/.config/nvim/bundle/YouCompleteMe
+./install.py --go-completer --rust-completer
+
+cd -

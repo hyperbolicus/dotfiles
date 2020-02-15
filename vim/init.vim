@@ -27,7 +27,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 
 Plugin 'scrooloose/nerdtree' " File tab
-Plugin 'vim-syntastic/syntastic' " Language Description
+Plugin 'dense-analysis/ale' " Language Description instead of syntastic
+Plugin 'davidhalter/jedi-vim'
+Plugin 'ycm-core/YouCompleteMe' " Completion plugin
 Plugin 'majutsushi/tagbar' " For tags
 Plugin 'Shougo/denite.nvim' " Like Helm for Vim
 Plugin 'vim-airline/vim-airline' " Status Bar
