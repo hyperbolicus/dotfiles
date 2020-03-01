@@ -4,7 +4,6 @@ set realname = {{ user | quote }}
 
 # Visual configuration
 
-
 set sidebar_visible
 set mail_check_stats
 set sidebar_format="%B%* %?N?(%N)?"

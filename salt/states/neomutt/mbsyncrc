@@ -1,10 +1,10 @@
  {% for i in pillar.get('mbsync') %}
  IMAPAccount {{ i['name'] }}
  Host {{ i['host'] }}
- Port 143
+ Port {{ i.setdefault('port',143) }}
  User {{ i['user'] }}
  PassCmd "pass {{ i['name'] }}"
- SSLType starttls
+ SSLType {{ i.setdefault('protocoll','starttls') }}
  SSLVersions TLSv1.2
  SystemCertificates yes
 
