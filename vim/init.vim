@@ -2,8 +2,6 @@ syntax on
 
 " Setting basic style
 set nocompatible
-set number
-set relativenumber
 set showmode
 set smartcase
 set smarttab
@@ -15,6 +13,8 @@ set softtabstop=2
 set background=dark
 set laststatus=0
 set ignorecase
+set wildmode=longest,list,full
+
 
 " Setup Vundle
 " ------------
