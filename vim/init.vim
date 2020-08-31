@@ -26,21 +26,16 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
 
-Plugin 'scrooloose/nerdtree' " File tab
-Plugin 'vim-syntastic/syntastic' " Language Description
 Plugin 'majutsushi/tagbar' " For tags
-Plugin 'Shougo/denite.nvim' " Like Helm for Vim
 Plugin 'vim-airline/vim-airline' " Status Bar
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ycm-core/YouCompleteMe' " Completion Engine
 
-Plugin 'martinda/Jenkinsfile-vim-syntax' " Jenkinfile Plugin
-Plugin 'hashivim/vim-terraform' " Terraform Plugin
 
 Plugin 'SirVer/ultisnips' " Snippet Engine
 Plugin 'Shougo/deoplete.nvim'
 Plugin 'honza/vim-snippets' " Basic Snippet
 
-Plugin 'tpope/vim-fugitive' " Git Wrapper
 
 call vundle#end()
 
