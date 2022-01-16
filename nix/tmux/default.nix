@@ -1,10 +1,11 @@
-{tmux, writeText, symlinkJoin, makeWrapper, ...}:
-  symlinkJoin  {
+self: super: {
+  tmux = super.symlinkJoin  {
     name = "tmux";
-    buildInputs = [makeWrapper];
-    paths = [tmux];
+    buildInputs = [super.makeWrapper];
+    paths = [super.tmux];
     postBuild = ''
-      wrapProgram "$out/bin/tmux" \
+      super.wrapProgram "$out/bin/tmux" \
       --add-flags "-f ${./tmux.conf}"
       '';
-  } 
+  };
+  }
