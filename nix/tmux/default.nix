@@ -1,7 +1,7 @@
 self: super: {
   tmux = super.symlinkJoin  {
     name = "tmux";
-    buildInputs = [super.makeWrapper];
+    buildInputs = [super.makeWrapper super.fish];
     paths = [super.tmux];
     postBuild = ''
       wrapProgram "$out/bin/tmux" \
