@@ -1,10 +1,11 @@
-{fish, writeText, symlinkJoin, makeWrapper, ...}:
-  symlinkJoin  {
+self: super:{
+  fish = super.symlinkJoin  {
     name = "fish";
-    buildInputs = [makeWrapper];
-    paths = [fish];
+    buildInputs = [super.makeWrapper];
+    paths = [super.fish];
     postBuild = ''
       wrapProgram "$out/bin/fish" \
       --run "mkdir -p ~/.config/fish && cp -f ${./fishrc} ~/.config/fish/config.fish"
       '';
-  } 
+    };
+  }

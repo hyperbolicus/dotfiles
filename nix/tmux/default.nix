@@ -4,7 +4,7 @@ self: super: {
     buildInputs = [super.makeWrapper];
     paths = [super.tmux];
     postBuild = ''
-      super.wrapProgram "$out/bin/tmux" \
+      wrapProgram "$out/bin/tmux" \
       --add-flags "-f ${./tmux.conf}"
       '';
   };
