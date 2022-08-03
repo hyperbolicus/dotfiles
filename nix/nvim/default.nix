@@ -35,14 +35,14 @@ self: super: {
             sha256 = "XK1Y2qVe3ajjGmRdy/fJ6Nnb7PyHYCntJFJyjqr4uB4=";
           };
         };
-        asyncomplete-lsp = super.vimUtils.buildVimPluginFrom2Nix {
-          name = "asyncomplete-lsp";
+        asyncomplete-omni = super.vimUtils.buildVimPluginFrom2Nix {
+          name = "asyncomplete-omni";
           buildDependencies = [super.shellcheck];
           src = super.fetchFromGitHub {
-            owner = "prabirshrestha";
-            repo = "asyncomplete-lsp";
-            rev = "9c7651894c2c6d656c0dc71e87cfabbbb71b9c78";
-            sha256 = "XK1Y2qVe3ajjGmRdy/fJ6Nnb7PyHYCntJFJyjqr4uB4=";
+            owner = "yami-beta";
+            repo = "asyncomplete-omni.vim";
+            rev = "f13986b671a37d6320476af6bc066697e71463c1";
+            sha256 = "RtHr7J+B95/SWzGwPp9vaktUWj1rsw3xioBbgRK+HPg=";
           };
         };
       }); 
@@ -52,8 +52,9 @@ self: super: {
         "vim-lsp-settings"
         "dhall-vim"
         "robotframework-vim"
+        "asyncomplete-omni"
         "asyncomplete-vim"
-        "asyncomplete-lsp"
+        "asyncomplete-lsp-vim"
       ];
     };
   };}

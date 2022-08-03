@@ -1,5 +1,17 @@
 if status is-interactive
     export TIMELOG=$HOME/backups/zeiten.timeclock
+    export EDITOR=nvim
     alias vim=nvim
     # Commands to run in interactive sessions can go here
 end
+
+function fish_prompt
+  if test -n "$IN_NIX_SHELL"
+    set_color brblue
+    echo $IN_NIX_SHELL (prompt_pwd --dir-length=1 --full-length-dirs=2)(set_color normal; fish_git_prompt)'>' (set_color normal)
+  else
+    echo "$(set_color brgreen;prompt_login):$(set_color green;prompt_pwd --dir-length=1 --full-length-dirs=2)$(set_color normal; fish_git_prompt)$(set_color normal)> "
+  end
+end
+
+
