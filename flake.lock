@@ -1,0 +1,132 @@
+{
+  "nodes": {
+    "fish": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-ovHi7ZMbVfjt8HRxiUeBa6nR+m0MFPjnC8wdU/Giej8=",
+        "path": "./packages/fish/",
+        "type": "path"
+      },
+      "original": {
+        "path": "./packages/fish/",
+        "type": "path"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_3": {
+      "locked": {
+        "lastModified": 1659877975,
+        "narHash": "sha256-zllb8aq3YO3h8B/U0/J1WBgAL8EX5yWf5pMj3G0NAmc=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c0e246b9b83f637f4681389ecabcb2681b4f3af0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "neovim": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-sHYvuNgIBnYhlqZGAjJB6tVaJFkPMSgj7ohf0tCoZo4=",
+        "path": "./packages/neovim/",
+        "type": "path"
+      },
+      "original": {
+        "path": "./packages/neovim/",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1653936696,
+        "narHash": "sha256-M6bJShji9AIDZ7Kh7CPwPBPb/T7RiVev2PAcOi4fxDQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "ce6aa13369b667ac2542593170993504932eb836",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "22.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "fish": "fish",
+        "neovim": "neovim",
+        "nixpkgs": "nixpkgs",
+        "tmux": "tmux"
+      }
+    },
+    "tmux": {
+      "inputs": {
+        "fish": [
+          "fish"
+        ],
+        "flake-utils": "flake-utils_3",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-c7qZ1OVhcC8E2Nb07aoK0viUp1pKxHHCSYm6NX8mbFc=",
+        "path": "./packages/tmux/",
+        "type": "path"
+      },
+      "original": {
+        "path": "./packages/tmux/",
+        "type": "path"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
