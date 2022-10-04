@@ -38,27 +38,9 @@
       viAlias = true;
       configure = {
         customRC = ''
-                                                                syntax enable
-                                                                set nocompatible
+lua dofile("${./base.lua}")
 
-                                                                filetype plugin indent on
-
-
-                                                                set hidden
-                                                                set noswapfile
-                                                                set smartcase
-                                                                set smarttab
-                                                                set smartindent
-                                                                set autoindent
-                                                                set expandtab
-                                                                set shiftwidth=2
-                                                                set softtabstop=2
-                                                                set background=dark
-                                                                set laststatus=2
-                                                                set ignorecase
-                                                                set wildmode=longest,list,full
-                                                                set nu
-        '';
+'';
         packages.myPlugins =  {
           start = with super.vimPlugins ; [    vim-nix
           vim-lsp
