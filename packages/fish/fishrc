@@ -15,3 +15,4 @@ function fish_prompt
 end
 
 fish_add_path -m $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin
+set theme_color_scheme "Solarized Dark"

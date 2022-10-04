@@ -8,7 +8,7 @@
           flake-utils.lib.eachDefaultSystem (system: rec {
 		packages.tmux =
 			let
-			pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+			pkgs = nixpkgs.legacyPackages.${system};
 			configFile = pkgs.writeTextFile {
 				name = "tmux.conf";
 				text = ''
@@ -32,7 +32,7 @@
 			};
 		in 
 
-			with import nixpkgs {system = "x86_64-darwin";}; symlinkJoin  {
+			with import nixpkgs {system = "${system}";}; symlinkJoin  {
 				name = "tmux";
 				buildInputs = [pkgs.makeWrapper fish.packages.${system}.fish];
 				paths = [pkgs.tmux fish.packages.${system}.fish];
