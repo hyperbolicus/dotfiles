@@ -23,15 +23,15 @@
         flake-utils.lib.eachDefaultSystem (system: 
           let pkgs = nixpkgs.legacyPackages.${system};
           in rec {
-		packages.tmux = tmux.packages.x86_64-darwin.tmux;
-		packages.fish = fish.packages.x86_64-darwin.fish;
-		packages.neovim = neovim.packages.x86_64-darwin.neovim;
+		packages.tmux = tmux.packages.${system}.tmux;
+		packages.fish = fish.packages.${system}.fish;
+		packages.neovim = neovim.packages.${system}.neovim;
 		packages.default = pkgs.symlinkJoin {
 			name = "customPackages";
 			paths = [
-				self.packages.x86_64-darwin.tmux
-				self.packages.x86_64-darwin.fish
-				self.packages.x86_64-darwin.neovim
+				self.packages.${system}.tmux
+				self.packages.${system}.fish
+				self.packages.${system}.neovim
 				];
 		} ;
 		});
