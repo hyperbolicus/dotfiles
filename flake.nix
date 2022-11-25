@@ -29,9 +29,9 @@
 		packages.default = pkgs.symlinkJoin {
 			name = "customPackages";
 			paths = [
-				self.packages.${system}.tmux
-				self.packages.${system}.fish
-				self.packages.${system}.neovim
+				packages.tmux
+				packages.fish
+				packages.neovim
 				];
 		} ;
 		});
