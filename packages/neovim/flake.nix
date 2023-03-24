@@ -16,7 +16,7 @@
         src = super.fetchFromGitHub {
           owner = "mattn";
           repo = "vim-lsp-settings";
-          rev = "c796dd1878bede91c110a858123368861fc5aa34";
+          rev = "33ad6db29179cf16d6e35feddbbb343bba477623";
           sha256 = "XK1Y2qVe3ajjGmRdy/fJ6Nnb7PyHYCntJFJyjqr4uB4=";
         };
       });

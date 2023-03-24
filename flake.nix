@@ -2,7 +2,7 @@
 	description = "Flake to configure basic setup";
 
 	inputs = {
-		nixpkgs.url = github:NixOS/nixpkgs/22.05;
+		nixpkgs.url = github:NixOS/nixpkgs;
 		fish = {
 			url = "path:./packages/fish/";
 			inputs.nixpkgs.follows = "nixpkgs";
