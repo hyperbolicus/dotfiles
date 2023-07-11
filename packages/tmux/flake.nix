@@ -1,17 +1,17 @@
 {
-	description = "Flake to setup Tmux with fish";
-	inputs.nixpkgs.url = github:NixOS/nixpkgs/22.05;
-	inputs.fish.url = "path:./fish/";
-	inputs.flake-utils.url = "github:numtide/flake-utils";
+  description = "Flake to setup Tmux with fish";
+  inputs.nixpkgs.url = github:NixOS/nixpkgs/22.05;
+  inputs.fish.url = "path:./fish/";
+  inputs.flake-utils.url = "github:numtide/flake-utils";
 
-        outputs = {self, nixpkgs, fish, flake-utils} : 
-          flake-utils.lib.eachDefaultSystem (system: rec {
-		packages.tmux =
-			let
-			pkgs = nixpkgs.legacyPackages.${system};
-			configFile = pkgs.writeTextFile {
-				name = "tmux.conf";
-				text = ''
+  outputs = { self, nixpkgs, fish, flake-utils }:
+    flake-utils.lib.eachDefaultSystem (system: rec {
+      packages.tmux =
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          configFile = pkgs.writeTextFile {
+            name = "tmux.conf";
+            text = ''
 
 					set -g default-terminal "screen-256color"
 					set -sg escape-time 0
@@ -29,18 +29,18 @@
 					set -g status-bg black
 					set -g status-fg white
 					'';
-			};
-		in 
+          };
+        in
 
-			with import nixpkgs {system = "${system}";}; symlinkJoin  {
-				name = "tmux";
-				buildInputs = [pkgs.makeWrapper fish.packages.${system}.fish];
-				paths = [pkgs.tmux fish.packages.${system}.fish];
-				postBuild = ''
-					wrapProgram "$out/bin/tmux" \
-					--add-flags "-f ${configFile}"
-					'';
-			};
-                      });
+        with import nixpkgs { system = "${system}"; }; symlinkJoin {
+          name = "tmux";
+          buildInputs = [ pkgs.makeWrapper fish.packages.${system}.fish ];
+          paths = [ pkgs.tmux fish.packages.${system}.fish ];
+          postBuild = ''
+            					wrapProgram "$out/bin/tmux" \
+            					--add-flags "-f ${configFile}"
+            					'';
+        };
+    });
 }
 
