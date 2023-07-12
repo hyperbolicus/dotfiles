@@ -28,6 +28,8 @@
 					set-option -g default-shell ${fish.packages.${system}.fish}/bin/fish
 					set -g status-bg black
 					set -g status-fg white
+
+                                        set-option -g detach-on-destroy off
 					'';
           };
         in
