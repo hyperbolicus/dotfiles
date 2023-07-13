@@ -16,6 +16,17 @@ vim.o.ignorecase = true
 vim.o.wildmode= "longest,list,full"
 vim.o.nu = true
 
-vim.o.clipboard = "unnamedplus";
-vim.o.cursorline = true;
+vim.o.clipboard = "unnamedplus"
+vim.o.cursorline = true
 
+vim.o.cmdheight = 2
+vim.o.conceallevel = 0
+vim.o.mouse = "" 
+
+vim.o.splitbelow = true
+vim.o.splitright = true
+
+vim.o.undofile = true
+vim.o.numberwidth = 4
+vim.o.signcolumn = "yes"
+vim.o.scrolloff = 8
