@@ -32,14 +32,20 @@
               sha256 = "RtHr7J+B95/SWzGwPp9vaktUWj1rsw3xioBbgRK+HPg=";
             };
           });
+          configs = super.luajit.pkgs.buildLuaPackage {
+            pname = "personalconfig";
+            version = "0.0.1";
+            src = ./lua;
+
+          };
         in
 
         super.neovim.override {
           vimAlias = true;
           viAlias = true;
-#          extraLuaPackages = _:  [nvimConfig];
+          extraLuaPackages = _:  [configs super.luajit.pkgs.serpent];
           configure = {
-          customRC = "lua dofile(\"${./base.lua}\")";
+          customRC = "lua require('personalconfig')";
             packages.myPlugins = {
               start = with super.vimPlugins ; [
                 vim-nix
