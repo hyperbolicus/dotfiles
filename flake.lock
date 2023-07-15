@@ -99,7 +99,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-9oEbYphHRhcqr45IwCAhtUYaGL1t3MrVk0KRR5Dhx/U=",
+        "narHash": "sha256-8iWZ4L1ed93TjeuvOd/1ew0IHaoHuy1ZXNdJIr4S7U4=",
         "path": "./packages/neovim/",
         "type": "path"
       },
@@ -110,11 +110,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1689106779,
-        "narHash": "sha256-hcPgAp0hpmWdQpb7Ira+VTjDPbJGNXJzjgRM35iWw4M=",
+        "lastModified": 1689450919,
+        "narHash": "sha256-XifFtCVRtxeqQjRYDo0BneMoReKwlRrT6Joz8SkQp4Q=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "67ecd3fd9d46c3e4a29e0e5712ec1f618b140b02",
+        "rev": "651a2bb44d0c35e3c14b0f395bbce623be341a5c",
         "type": "github"
       },
       "original": {
@@ -204,7 +204,7 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-kIykFSZ9qTSyUrV8SyQMp4ti4gDIc4ZLiJ6wlB9LJTI=",
+        "narHash": "sha256-gXM9u/pggO07VF5lUZh/7kmiZ2uhy52g+Bk8P0NpBFI=",
         "path": "./packages/tmux/",
         "type": "path"
       },

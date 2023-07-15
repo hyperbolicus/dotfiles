@@ -22,16 +22,6 @@
               sha256 = "XK1Y2qVe3ajjGmRdy/fJ6Nnb7PyHYCntJFJyjqr4uB4=";
             };
           });
-          asyncomplete-omni = super: (super.vimUtils.buildVimPluginFrom2Nix {
-            name = "asyncomplete-omni";
-            buildDependencies = [ super.shellcheck ];
-            src = super.fetchFromGitHub {
-              owner = "yami-beta";
-              repo = "asyncomplete-omni.vim";
-              rev = "f13986b671a37d6320476af6bc066697e71463c1";
-              sha256 = "RtHr7J+B95/SWzGwPp9vaktUWj1rsw3xioBbgRK+HPg=";
-            };
-          });
           configs = super.luajit.pkgs.buildLuaPackage {
             pname = "personalconfig";
             version = "0.0.1";
@@ -43,19 +33,18 @@
         super.neovim.override {
           vimAlias = true;
           viAlias = true;
-          extraLuaPackages = _:  [configs super.luajit.pkgs.serpent];
+          extraLuaPackages = _: [ configs super.luajit.pkgs.serpent ];
           configure = {
-          customRC = "lua require('personalconfig')";
+            customRC = "lua require('personalconfig')";
             packages.myPlugins = {
               start = with super.vimPlugins ; [
-                vim-nix
-                vim-lsp
-                (vim-lsp-settings super)
-                dhall-vim
-                (asyncomplete-omni super)
-                asyncomplete-vim
-                asyncomplete-lsp-vim
-                (nvim-treesitter.withPlugins (_: super.tree-sitter.allGrammars))
+                nvim-cmp
+                nvim-lspconfig
+                cmp-buffer
+                cmp-path
+                cmp-cmdline
+                cmp-nvim-lsp
+                luasnip
               ];
             };
           };
