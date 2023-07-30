@@ -1,0 +1,19 @@
+{
+    "workspace.library": [
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/cmp-buffer",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/cmp-cmdline",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/cmp-nvim-lsp",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/cmp-path",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/luasnip",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/nvim-cmp",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/nvim-lspconfig",
+        "/nix/store/b5p74vrl3qnlmmw4n8ksqqiar1jwz1fl-neovim-unwrapped-0.9.1/share/nvim/runtime",
+        "/nix/store/b5p74vrl3qnlmmw4n8ksqqiar1jwz1fl-neovim-unwrapped-0.9.1/lib/nvim",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/cmp-buffer/after",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/cmp-cmdline/after",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/cmp-nvim-lsp/after",
+        "/nix/store/x8wmj9f0q5z5albqzj36sfnibnjfpxs7-vim-pack-dir/pack/myNeovimPackages/start/cmp-path/after",
+        "${3rd}/luassert/library"
+    ]
+}

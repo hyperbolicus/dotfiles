@@ -1,11 +1,15 @@
 local lspconfig = require('lspconfig')
 lspconfig.pylsp.setup {}
 lspconfig.tsserver.setup {}
-lspconfig.rust_analyzer.setup {
+lspconfig.rust_analyzer.setup{
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
-    ['rust-analyzer'] = {},
-  },
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = true;
+      }
+    }
+  }
 }
 lspconfig.rnix.setup {}
 
