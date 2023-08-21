@@ -35,6 +35,7 @@
             neovim.packages.${system}.neovim
             pkgs.rnix-lsp
             pkgs.lua-language-server
+            pkgs.taskwarrior
           ];
         };
       });

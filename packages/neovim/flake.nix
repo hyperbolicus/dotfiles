@@ -34,6 +34,8 @@
           vimAlias = true;
           viAlias = true;
           extraLuaPackages = _: [ configs super.luajit.pkgs.serpent ];
+            withPython3 = true;
+            extraPython3Packages= _: with super.python3Packages; [six packaging tasklib];
           configure = {
             customRC = "lua require('personalconfig')";
             packages.myPlugins = {
@@ -45,6 +47,8 @@
                 cmp-cmdline
                 cmp-nvim-lsp
                 luasnip
+                taskwiki
+                vimwiki
               ];
             };
           };
