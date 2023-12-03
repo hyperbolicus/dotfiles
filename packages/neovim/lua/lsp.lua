@@ -1,9 +1,14 @@
 local lspconfig = require('lspconfig')
 lspconfig.pylsp.setup {}
-lspconfig.tsserver.setup {}
+lspconfig.tsserver.setup {
+  root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
+  single_file_support = true,
+
+}
 lspconfig.rust_analyzer.setup{
   -- Server-specific settings. See `:help lspconfig-setup`
   settings = {
+--    root_dir = lspconfig.util.root_pattern(".git", "Cargo.toml"),
     ['rust-analyzer'] = {
       diagnostics = {
         enable = true;

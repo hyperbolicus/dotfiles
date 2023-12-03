@@ -36,6 +36,7 @@
             pkgs.rnix-lsp
             pkgs.lua-language-server
             pkgs.taskwarrior
+            pkgs.tasksh
           ];
         };
       });

@@ -49,6 +49,7 @@
                 luasnip
                 taskwiki
                 vimwiki
+                nvim-treesitter.withAllGrammars
               ];
             };
           };
