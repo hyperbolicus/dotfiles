@@ -16,7 +16,7 @@ lspconfig.rust_analyzer.setup{
     }
   }
 }
-lspconfig.rnix.setup {}
+lspconfig.nixd.setup {}
 
 lspconfig.lua_ls.setup {
   settings = {

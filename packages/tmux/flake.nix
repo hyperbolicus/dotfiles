@@ -13,7 +13,7 @@
             name = "tmux.conf";
             text = ''
 
-					set -g default-terminal "screen-256color"
+					set -g default-terminal "xterm-256color"
 					set -sg escape-time 0
 					setw -g mode-keys vi
 
