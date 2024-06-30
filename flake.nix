@@ -7,6 +7,10 @@
       url = "path:./packages/fish/";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    tmux = {
+      url = "path:./packages/tmux/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     neovim = {
       url = "path:./packages/neovim/";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,14 +18,32 @@
     flake-utils.url = "github:numtide/flake-utils";
   };
 
-  outputs = { self, nixpkgs, fish, neovim, flake-utils }:
+  outputs = { self, nixpkgs, fish, tmux, neovim, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system:
       let pkgs = nixpkgs.legacyPackages.${system};
       in rec {
         formatter = pkgs.nixpkgs-fmt;
         packages.fish = fish.packages.${system}.fish;
-        packages.tmux = pkgs.callPackage "path:./packages/tmux" pkgs  packages.fish;
+        packages.tmux = tmux.packages.${system}.tmux packages.fish;
         packages.neovim = neovim.packages.${system}.neovim;
+        packages.joined_with_config = fishConfig:
+        let fish = 
+            fish.packages.${system}.fish_with_config fishConfig;
+            tmux = tmux.packages.${system}tmux packages.fish;
+            in
+        pkgs.symlinkJoin {
+name = "customPackages";
+          paths = [
+            fish
+            tmux
+            neovim.packages.${system}.neovim
+            pkgs.lua-language-server
+	    pkgs.nixd
+            pkgs.taskwarrior
+            pkgs.tasksh
+          ];
+        };
+
         packages.default = pkgs.symlinkJoin {
           name = "customPackages";
           paths = [

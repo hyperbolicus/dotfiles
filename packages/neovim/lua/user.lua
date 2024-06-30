@@ -1,4 +1,4 @@
-vim.o.syntax = off
+vim.o.syntax = "off"
 vim.o.compatible = false
 
 vim.o.hidden = true

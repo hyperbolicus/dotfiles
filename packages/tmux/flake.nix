@@ -1,13 +1,12 @@
 {
   description = "Flake to setup Tmux with fish";
   inputs.nixpkgs.url = github:NixOS/nixpkgs/22.05;
-  inputs.fish.url = "path:./fish/";
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
-  outputs = { self, nixpkgs, fish, flake-utils }:
+  outputs = { self, nixpkgs, flake-utils }:
     flake-utils.lib.eachDefaultSystem (system: rec {
-      packages.tmux =
-        let
+      packages.tmux = fish:
+        (let
           pkgs = nixpkgs.legacyPackages.${system};
           configFile = pkgs.writeTextFile {
             name = "tmux.conf";
@@ -25,7 +24,7 @@
 # Start windows and panes at 1, not 0
 					set -g base-index 1
 					setw -g pane-base-index 1
-					set-option -g default-shell ${fish.packages.${system}.fish}/bin/fish
+					set-option -g default-shell ${fish}/bin/fish
 					set -g status-bg black
 					set -g status-fg white
 
@@ -36,13 +35,13 @@
 
         with import nixpkgs { system = "${system}"; }; symlinkJoin {
           name = "tmux";
-          buildInputs = [ pkgs.makeWrapper fish.packages.${system}.fish ];
-          paths = [ pkgs.tmux fish.packages.${system}.fish ];
+          buildInputs = [ pkgs.makeWrapper fish ];
+          paths = [ pkgs.tmux fish ];
           postBuild = ''
             					wrapProgram "$out/bin/tmux" \
             					--add-flags "-f ${configFile}"
             					'';
-        };
+        });
     });
 }
 
