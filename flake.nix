@@ -12,6 +12,17 @@
         fish_func = pkgs.callPackage ././packages/fish/default.nix;
         tmux_func = pkgs.callPackage ././packages/tmux/default.nix;
         neovim_func = pkgs.callPackage ././packages/neovim/default.nix;
+        default_packages = with pkgs; [
+          lua-language-server
+          nixd
+          taskwarrior
+          tasksh
+          fzf
+          bat
+          nixpkgs-fmt
+          ripgrep
+          fd
+        ]; 
       in rec {
         formatter = pkgs.nixpkgs-fmt;
         packages.fish = fish_func pkgs "";
@@ -23,16 +34,12 @@
             tmux_custom = tmux_func pkgs fish_custom;
             in
         pkgs.symlinkJoin {
-name = "customPackages";
+        name = "customPackages";
           paths = [
             fish_custom
             tmux_custom
             packages.neovim
-            pkgs.lua-language-server
-	    pkgs.nixd
-            pkgs.taskwarrior
-            pkgs.tasksh
-          ];
+          ] ++ default_packages;
         };
 
         packages.default = pkgs.symlinkJoin {
@@ -41,11 +48,7 @@ name = "customPackages";
             packages.tmux
             packages.fish
             packages.neovim
-            pkgs.lua-language-server
-	    pkgs.nixd
-            pkgs.taskwarrior
-            pkgs.tasksh
-          ];
+          ] ++ default_packages;
         };
       });
 }
