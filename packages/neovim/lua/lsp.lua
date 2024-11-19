@@ -1,6 +1,6 @@
 local lspconfig = require('lspconfig')
 lspconfig.pylsp.setup {}
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   root_dir = lspconfig.util.root_pattern("package.json", "tsconfig.json", ".git"),
   single_file_support = true,
 
