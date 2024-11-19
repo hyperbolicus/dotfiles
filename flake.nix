@@ -15,7 +15,7 @@
         default_packages = with pkgs; [
           lua-language-server
           nixd
-          taskwarrior
+          taskwarrior3
           tasksh
           fzf
           bat
