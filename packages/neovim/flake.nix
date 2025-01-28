@@ -49,7 +49,7 @@
                 luasnip
                 taskwiki
                 vimwiki
-                nvim-treesitter.withAllGrammars
+                (nvim-treesitter.withPlugins (p: [p.c p.java p.yaml p.json p.xml p.vue p.vim p.vimdoc p.typescript p.tmux p.terraform p.ssh_config p.sql p.rust p.python p.rst p.markdown p.regex p.purescript p.bash p.fish p.nix]))
               ];
             };
           };
