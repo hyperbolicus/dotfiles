@@ -30,3 +30,5 @@ vim.o.undofile = true
 vim.o.numberwidth = 4
 vim.o.signcolumn = "yes"
 vim.o.scrolloff = 8
+
+vim.o.foldenable = false
