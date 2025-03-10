@@ -14,6 +14,8 @@
         neovim_func = pkgs.callPackage ././packages/neovim/default.nix;
         default_packages = with pkgs; [
           lua-language-server
+          languagetool
+          ltex-ls-plus
           nixd
           taskwarrior3
           tasksh

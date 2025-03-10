@@ -18,6 +18,14 @@ lspconfig.rust_analyzer.setup{
 }
 lspconfig.nixd.setup {}
 
+lspconfig.ltex_plus.setup{
+  settings = {
+    ltex = {
+      language = "auto",
+    },
+  },
+}
+
 lspconfig.lua_ls.setup {
   settings = {
     Lua = {
