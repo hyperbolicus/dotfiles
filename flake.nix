@@ -12,6 +12,7 @@
         fish_func = pkgs.callPackage ././packages/fish/default.nix;
         tmux_func = pkgs.callPackage ././packages/tmux/default.nix;
         neovim_func = pkgs.callPackage ././packages/neovim/default.nix;
+        helix_func = pkgs.callPackage ././packages/helix/default.nix;
         default_packages = with pkgs; [
           lua-language-server
           languagetool
@@ -30,6 +31,7 @@
         packages.fish = fish_func pkgs "";
         packages.tmux = tmux_func pkgs packages.fish;
         packages.neovim = neovim_func pkgs;
+        packages.helix = helix_func pkgs;
         packages.joined_with_config = fishConfig:
         let fish_custom = 
             fish_func pkgs fishConfig;
@@ -41,6 +43,7 @@
             fish_custom
             tmux_custom
             packages.neovim
+            packages.helix
           ] ++ default_packages;
         };
 
@@ -50,6 +53,7 @@
             packages.tmux
             packages.fish
             packages.neovim
+            packages.helix
           ] ++ default_packages;
         };
       });
