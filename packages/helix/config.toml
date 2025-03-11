@@ -1,0 +1,10 @@
+theme = "amberwood"
+
+[editor]
+auto-pairs = false
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.soft-wrap]
+enable= true

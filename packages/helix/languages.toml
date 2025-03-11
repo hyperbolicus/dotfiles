@@ -1,0 +1,11 @@
+[[language]]
+name = "markdown"
+language-servers = ["ltex-ls-plus"]
+
+[[language]]
+name = "rst"
+language-servers = ["ltex-ls-plus"]
+
+[language-server.ltex-ls-plus.config]
+command = "ltex-ls-plus"
+ltex.language = "en-GB"
