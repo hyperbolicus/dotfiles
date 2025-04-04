@@ -1,7 +1,6 @@
 if status is-interactive
     export TIMELOG=$HOME/backups/zeiten.timeclock
-    export EDITOR=nvim
-    alias vim=nvim
+    export EDITOR=hx
     # Commands to run in interactive sessions can go here
 end
 
